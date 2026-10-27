@@ -32,11 +32,10 @@ async function enviar() {
 <template>
   <div class="auth-wrap">
     <div class="auth-card">
-      <p class="eyebrow">Autenticación JWT</p>
+      <p class="eyebrow">Acceso</p>
       <h1 class="auth-title">Iniciar sesión</h1>
       <p class="lead">
-        El token se firma en el servidor (HS256) y viaja en el encabezado
-        <code>Authorization</code> en cada operación de escritura.
+        Accede para añadir, corregir o eliminar registros del catálogo.
       </p>
 
       <AlertBox v-if="error" :message="error.message" :details="error.details" />
@@ -66,14 +65,6 @@ async function enviar() {
       <p class="auth-alt">
         ¿No tienes cuenta? <NuxtLink to="/register">Crear una cuenta</NuxtLink>
       </p>
-
-      <details class="auth-hint">
-        <summary>Cuenta creada por el seed</summary>
-        <p class="mb-0">
-          Correo: <code>admin@catalogo-nobel.test</code><br />
-          Contraseña: <code>Nobel2026!</code>
-        </p>
-      </details>
     </div>
   </div>
 </template>

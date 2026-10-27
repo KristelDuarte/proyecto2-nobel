@@ -188,11 +188,10 @@ async function borrar(registro) {
 
     <div class="section-title">
       <div>
-        <p class="eyebrow">Entidad principal</p>
+        <p class="eyebrow">Catálogo</p>
         <h2>Galardonados</h2>
         <p class="lead mb-0">
-          Alta, edición y borrado de registros mediante
-          <code>POST</code>, <code>PUT</code> y <code>DELETE</code>.
+          Añade nuevos premios, corrige los datos existentes o elimina registros.
         </p>
       </div>
       <NuxtLink to="/laureates" class="btn btn-ghost btn-sm">Ver catálogo público</NuxtLink>
@@ -298,7 +297,7 @@ async function borrar(registro) {
       </p>
     </div>
 
-    <p v-if="pendiente" class="muted">Consultando la API…</p>
+    <p v-if="pendiente" class="muted">Cargando…</p>
 
     <div v-else class="table-wrap">
       <table class="data-table">
@@ -315,7 +314,7 @@ async function borrar(registro) {
           <tr v-for="r in rows" :key="r.id">
             <td>
               <span class="cell-main">{{ r.laureate }}</span>
-              <span class="cell-sub">{{ genderLabel(r.gender) }} · <code>{{ r.slug }}</code></span>
+              <span class="cell-sub">{{ genderLabel(r.gender) }}</span>
             </td>
             <td>{{ r.year }}</td>
             <td>

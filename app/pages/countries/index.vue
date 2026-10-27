@@ -35,11 +35,11 @@ onMounted(cargar)
   <div>
     <div class="section-title">
       <div>
-        <p class="eyebrow">Entidad secundaria</p>
+        <p class="eyebrow">Procedencias</p>
         <h2>Países de nacimiento</h2>
         <p class="lead mb-0">
-          Cada galardonado referencia a un país; desde aquí puedes navegar a todos
-          los premios nacidos en un país concreto.
+          Cada galardonado está vinculado a su país de nacimiento; desde aquí puedes
+          ver todos los premios de un país concreto.
         </p>
       </div>
     </div>
@@ -62,7 +62,7 @@ onMounted(cargar)
     </div>
 
     <AlertBox v-if="error" :message="error.message" />
-    <p v-else-if="pendiente" class="muted">Consultando la API…</p>
+    <p v-else-if="pendiente" class="muted">Cargando…</p>
 
     <div v-else-if="paises.length" class="country-grid">
       <CountryCard v-for="p in paises" :key="p.id" :country="p" />

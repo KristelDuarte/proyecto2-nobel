@@ -37,11 +37,11 @@ async function enviar() {
 <template>
   <div class="auth-wrap">
     <div class="auth-card">
-      <p class="eyebrow">Autenticación JWT</p>
+      <p class="eyebrow">Cuenta nueva</p>
       <h1 class="auth-title">Crear cuenta</h1>
       <p class="lead">
-        Las cuentas nuevas reciben el rol <strong>editor</strong>: pueden crear y
-        editar registros, pero solo un <strong>administrador</strong> puede borrarlos.
+        Con una cuenta puedes añadir y corregir registros del catálogo. Solo la cuenta
+        administradora puede eliminar.
       </p>
 
       <AlertBox v-if="error" :message="error.message" :details="error.details" />

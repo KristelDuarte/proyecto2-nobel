@@ -176,11 +176,6 @@ const nacimiento = computed(() => {
           </NuxtLink>
         </section>
       </div>
-
-      <p class="muted mt-3">
-        Identificador en MongoDB: <code>{{ registro.id }}</code> · slug:
-        <code>{{ registro.slug }}</code>
-      </p>
     </template>
   </div>
 </template>

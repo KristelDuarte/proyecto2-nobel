@@ -124,11 +124,11 @@ async function borrar(registro) {
 
     <div class="section-title">
       <div>
-        <p class="eyebrow">Entidad secundaria</p>
+        <p class="eyebrow">Catálogo</p>
         <h2>Países</h2>
         <p class="lead mb-0">
-          Si no indicas una bandera, la API genera la URL del CDN a partir del
-          código ISO (<code>https://flagcdn.com/w320/xx.png</code>).
+          Los países de origen de los galardonados. Si no indicas una bandera, se usará
+          la que corresponde a su código internacional.
         </p>
       </div>
       <NuxtLink to="/countries" class="btn btn-ghost btn-sm">Ver vista pública</NuxtLink>
@@ -170,7 +170,7 @@ async function borrar(registro) {
 
         <label class="form-field form-field-full">
           <span>URL de la bandera (opcional)</span>
-          <input v-model="form.flag" type="url" maxlength="400" placeholder="https://flagcdn.com/w320/gt.png" />
+          <input v-model="form.flag" type="url" maxlength="400" placeholder="https://…" />
         </label>
 
         <div class="form-actions form-field-full">
@@ -182,7 +182,7 @@ async function borrar(registro) {
       </form>
     </section>
 
-    <p v-if="pendiente" class="muted mt-3">Consultando la API…</p>
+    <p v-if="pendiente" class="muted mt-3">Cargando…</p>
 
     <div v-else class="table-wrap mt-3">
       <table class="data-table">

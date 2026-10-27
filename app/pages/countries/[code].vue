@@ -88,7 +88,7 @@ useHead(() => ({ title: pais.value ? `${pais.value.name} · Premios Nobel` : 'Pa
       <div class="section-title mt-3">
         <div>
           <h2>Galardonados de {{ pais.name }}</h2>
-          <p class="lead mb-0">Filtrado en el servidor por la referencia <code>countryId</code>.</p>
+          <p class="lead mb-0">Todos los premios concedidos a personas nacidas en {{ pais.name }}.</p>
         </div>
       </div>
 

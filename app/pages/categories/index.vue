@@ -21,7 +21,7 @@ onMounted(async () => {
   <div>
     <div class="section-title">
       <div>
-        <p class="eyebrow">Entidad secundaria</p>
+        <p class="eyebrow">Disciplinas</p>
         <h2>Categorías del premio</h2>
         <p class="lead mb-0">
           Seis categorías que agrupan los {{ numberEs(categorias.reduce((a, c) => a + (c.laureateCount || 0), 0)) }}
@@ -31,7 +31,7 @@ onMounted(async () => {
     </div>
 
     <AlertBox v-if="error" :message="error.message" />
-    <p v-else-if="pendiente" class="muted">Consultando la API…</p>
+    <p v-else-if="pendiente" class="muted">Cargando…</p>
 
     <div v-else class="cat-grid">
       <NuxtLink

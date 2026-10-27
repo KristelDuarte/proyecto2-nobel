@@ -24,17 +24,17 @@ const tarjetas = [
   {
     to: '/admin/laureates',
     titulo: 'Galardonados',
-    descripcion: 'Entidad principal: crear, editar y borrar premios.',
+    descripcion: 'Añade, corrige o elimina premios del catálogo.',
   },
   {
     to: '/admin/categories',
     titulo: 'Categorías',
-    descripcion: 'Entidad secundaria: las seis disciplinas del premio.',
+    descripcion: 'Las seis disciplinas en las que se agrupan los premios.',
   },
   {
     to: '/admin/countries',
     titulo: 'Países',
-    descripcion: 'Entidad secundaria: país de nacimiento de cada galardonado.',
+    descripcion: 'Los países de origen de los galardonados.',
   },
 ]
 </script>
@@ -47,8 +47,8 @@ const tarjetas = [
         <h2>Panel de administración</h2>
         <p class="lead mb-0">
           {{ user?.name }} · {{ user?.email }}
-          <span v-if="isAdmin" class="role-badge">admin</span>
-          <span v-else class="role-badge role-editor">editor</span>
+          <span v-if="isAdmin" class="role-badge">Administrador</span>
+          <span v-else class="role-badge role-editor">Editor</span>
         </p>
       </div>
       <button type="button" class="btn btn-ghost btn-sm" @click="logout(); navigateTo('/')">
@@ -76,7 +76,7 @@ const tarjetas = [
         <span>usuarios</span>
       </div>
     </div>
-    <p v-else-if="pendiente" class="muted">Consultando la API…</p>
+    <p v-else-if="pendiente" class="muted">Cargando…</p>
 
     <div class="admin-grid">
       <NuxtLink v-for="t in tarjetas" :key="t.to" class="admin-card" :to="t.to">
@@ -87,14 +87,14 @@ const tarjetas = [
     </div>
 
     <section class="panel mt-3">
-      <p class="eyebrow">Permisos del rol</p>
+      <p class="eyebrow">Tu cuenta</p>
       <h3 style="margin-top: 0">
-        {{ isAdmin ? 'Administrador: lectura, creación, edición y borrado' : 'Editor: lectura, creación y edición' }}
+        {{ isAdmin ? 'Puedes añadir, editar y eliminar registros' : 'Puedes añadir y editar registros' }}
       </h3>
       <p class="mb-0">
-        Las rutas de escritura exigen un token válido (<code>401</code> sin token) y el
-        borrado requiere el rol <code>admin</code> (<code>403</code> para editores). El
-        primer usuario registrado en una base vacía obtiene el rol de administrador.
+        Cualquier visitante puede consultar el catálogo. Para modificarlo hay que
+        iniciar sesión: las cuentas nuevas pueden añadir y corregir registros, y solo
+        la cuenta administradora puede eliminarlos.
       </p>
     </section>
   </div>

@@ -31,18 +31,16 @@ onMounted(async () => {
 <template>
   <div>
     <section class="hero">
-      <p class="hero-kicker">
-        Proyecto 2 · MongoDB · Netlify Functions · Autenticación JWT
-      </p>
+      <p class="hero-kicker">Catálogo de los Premios Nobel · 1901 – 2025</p>
       <h1>Un catálogo vivo de los Premios Nobel</h1>
       <p class="lead">
-        Galardonados, categorías y países almacenados en MongoDB y expuestos mediante
-        una API REST con operaciones de consulta, creación, edición y borrado.
-        El sitio consume el servicio en tiempo real.
+        Recorre más de un siglo de reconocimientos: descubre quiénes fueron los
+        galardonados, en qué disciplina destacaron y de qué países provinieron
+        las mentes que cambiaron su época.
       </p>
       <div class="hero-actions">
         <NuxtLink to="/laureates" class="btn">Explorar galardonados</NuxtLink>
-        <NuxtLink to="/admin" class="btn btn-outline-light">Administrar el catálogo</NuxtLink>
+        <NuxtLink to="/years" class="btn btn-outline-light">Recorrer por año</NuxtLink>
       </div>
     </section>
 
@@ -71,16 +69,16 @@ onMounted(async () => {
       </div>
     </div>
 
-    <p v-else-if="pendiente" class="muted">Cargando estadísticas desde la API…</p>
+    <p v-else-if="pendiente" class="muted">Cargando…</p>
 
     <section class="mt-3">
       <div class="section-title">
         <div>
-          <p class="eyebrow">Entidad secundaria</p>
+          <p class="eyebrow">Disciplinas</p>
           <h2>Categorías</h2>
           <p class="lead mb-0">
-            Cada premio pertenece a una de las seis categorías y cada categoría
-            referencia a todos sus galardonados.
+            Seis campos del conocimiento que, desde 1901, reconocen los aportes más
+            importantes a la humanidad.
           </p>
         </div>
         <NuxtLink to="/categories" class="btn btn-ghost btn-sm">Ver todas →</NuxtLink>
@@ -105,9 +103,9 @@ onMounted(async () => {
     <section class="mt-3">
       <div class="section-title">
         <div>
-          <p class="eyebrow">Entidad secundaria</p>
+          <p class="eyebrow">Procedencias</p>
           <h2>Países</h2>
-          <p class="lead mb-0">Los países de nacimiento más frecuentes del catálogo.</p>
+          <p class="lead mb-0">Los países de nacimiento más frecuentes entre los galardonados.</p>
         </div>
         <NuxtLink to="/countries" class="btn btn-ghost btn-sm">Ver todos →</NuxtLink>
       </div>
@@ -120,9 +118,9 @@ onMounted(async () => {
     <section class="mt-3">
       <div class="section-title">
         <div>
-          <p class="eyebrow">Entidad principal</p>
+          <p class="eyebrow">Novedades</p>
           <h2>Últimos premios</h2>
-          <p class="lead mb-0">Los galardonados más recientes del catálogo.</p>
+          <p class="lead mb-0">Las distinciones más recientes del catálogo.</p>
         </div>
         <NuxtLink to="/laureates" class="btn btn-ghost btn-sm">Ver todos →</NuxtLink>
       </div>
@@ -133,21 +131,14 @@ onMounted(async () => {
     </section>
 
     <section class="mt-3 panel">
-      <p class="eyebrow">Servicio REST</p>
-      <h2 style="margin-top: 0">Endpoints publicados</h2>
-      <p class="lead">
-        La aplicación y el servicio están separados: el frontend (Vue 3) consume
-        estas rutas, protegidas con JWT las que modifican datos.
+      <p class="eyebrow">Sobre el catálogo</p>
+      <h2 style="margin-top: 0">Más de un siglo de reconocimientos</h2>
+      <p class="lead mb-0">
+        Este catálogo reúne los premios concedidos desde 1901, organizados por
+        disciplina, año y país de nacimiento. Cada ficha incluye la motivación
+        oficial, la institución del galardonado y sus datos biográficos, para que
+        puedas recorrer la historia del premio desde distintos puntos de entrada.
       </p>
-      <ul class="endpoint-list">
-        <li><code>GET</code> <span>/api/laureates</span> — listado con filtros y paginación</li>
-        <li><code>GET</code> <span>/api/laureates/:slug</span> — consulta individual</li>
-        <li><code>POST</code> <span>/api/laureates</span> — crear (token requerido)</li>
-        <li><code>PUT</code> <span>/api/laureates/:id</span> — editar (token requerido)</li>
-        <li><code>DELETE</code> <span>/api/laureates/:id</span> — borrar (rol admin)</li>
-        <li><code>GET</code> <span>/api/categories</span> · <span>/api/countries</span> — entidades secundarias</li>
-        <li><code>POST</code> <span>/api/auth/register</span> · <span>/api/auth/login</span> — autenticación</li>
-      </ul>
     </section>
   </div>
 </template>

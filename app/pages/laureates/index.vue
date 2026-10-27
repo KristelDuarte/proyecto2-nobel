@@ -87,15 +87,15 @@ function limpiar() {
   <div>
     <div class="section-title">
       <div>
-        <p class="eyebrow">Entidad principal · {{ numberEs(meta.total) }} registros</p>
+        <p class="eyebrow">Catálogo completo</p>
         <h2>Buscar galardonados</h2>
         <p class="lead mb-0">
-          Los filtros se resuelven en el servidor: cada cambio envía una nueva
-          consulta a <code>/api/laureates</code>.
+          Busca por nombre, institución o motivación y combina los filtros para
+          acotar los resultados.
         </p>
       </div>
       <NuxtLink v-if="isAuthenticated" to="/admin/laureates" class="btn btn-sm">
-        + Nuevo galardonado
+        Añadir galardonado
       </NuxtLink>
     </div>
 
@@ -159,7 +159,7 @@ function limpiar() {
 
     <AlertBox v-if="error" :message="error.message" :details="error.details" />
 
-    <p v-else-if="pendiente" class="muted">Consultando la API…</p>
+    <p v-else-if="pendiente" class="muted">Cargando…</p>
 
     <div v-else-if="rows.length" class="card-grid">
       <LaureateCard v-for="r in rows" :key="r.id" :record="r" />

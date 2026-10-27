@@ -35,17 +35,17 @@ const decadas = computed(() => {
   <div>
     <div class="section-title">
       <div>
-        <p class="eyebrow">Navegación temporal</p>
+        <p class="eyebrow">Cronología</p>
         <h2>Premios por año</h2>
         <p class="lead mb-0">
-          Vista derivada de las estadísticas de la API: {{ stats?.totals.years || 0 }} años
-          con al menos un premio concedido.
+          {{ stats?.totals.years || 0 }} años con al menos un premio concedido.
+          Elige un año para ver a sus protagonistas.
         </p>
       </div>
     </div>
 
     <AlertBox v-if="error" :message="error.message" />
-    <p v-else-if="pendiente" class="muted">Consultando la API…</p>
+    <p v-else-if="pendiente" class="muted">Cargando…</p>
 
     <div v-else class="decade-list">
       <section v-for="bloque in decadas" :key="bloque.decada" class="decade-block">

@@ -73,11 +73,6 @@ useHead(() => ({ title: categoria.value ? `${categoria.value.name} · Premios No
         </span>
       </div>
 
-      <p class="muted">
-        Clave: <code>{{ categoria.key }}</code> · identificador:
-        <code>{{ categoria.id }}</code>
-      </p>
-
       <div v-if="laureados.length" class="card-grid">
         <LaureateCard v-for="r in laureados" :key="r.id" :record="r" />
       </div>

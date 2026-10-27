@@ -72,7 +72,7 @@ useHead(() => ({ title: `Premios Nobel de ${anio.value}` }))
     </div>
 
     <AlertBox v-if="error" :message="error.message" />
-    <p v-else-if="pendiente" class="muted">Consultando la API…</p>
+    <p v-else-if="pendiente" class="muted">Cargando…</p>
 
     <div v-else-if="laureados.length" class="card-grid">
       <LaureateCard v-for="r in laureados" :key="r.id" :record="r" />

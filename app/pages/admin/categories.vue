@@ -126,11 +126,11 @@ async function borrar(registro) {
 
     <div class="section-title">
       <div>
-        <p class="eyebrow">Entidad secundaria</p>
+        <p class="eyebrow">Catálogo</p>
         <h2>Categorías</h2>
         <p class="lead mb-0">
-          No se puede eliminar una categoría que tenga galardonados asociados
-          (la API responde <code>409</code>).
+          Las seis disciplinas del premio. Una categoría con galardonados asociados no
+          se puede eliminar: primero hay que reasignar esos premios.
         </p>
       </div>
       <NuxtLink to="/categories" class="btn btn-ghost btn-sm">Ver vista pública</NuxtLink>
@@ -144,7 +144,7 @@ async function borrar(registro) {
 
       <form class="form-grid form-grid-2" @submit.prevent="guardar">
         <label class="form-field">
-          <span>Clave * (slug único)</span>
+          <span>Clave *</span>
           <input v-model="form.key" type="text" required pattern="[a-z0-9]+(-[a-z0-9]+)*" placeholder="physics" />
         </label>
 
@@ -187,7 +187,7 @@ async function borrar(registro) {
       </form>
     </section>
 
-    <p v-if="pendiente" class="muted mt-3">Consultando la API…</p>
+    <p v-if="pendiente" class="muted mt-3">Cargando…</p>
 
     <div v-else class="table-wrap mt-3">
       <table class="data-table">

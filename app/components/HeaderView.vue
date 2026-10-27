@@ -44,9 +44,12 @@ function cerrarSesion() {
       <div class="nav-auth">
         <template v-if="isAuthenticated">
           <NuxtLink to="/admin" class="nav-admin">Panel</NuxtLink>
-          <span class="user-chip" :title="user?.email">
-            {{ user?.name || user?.email }}
-            <span v-if="isAdmin" class="role-badge">admin</span>
+          <span class="user-chip" :title="`${user?.name || ''} · ${user?.email || ''}`">
+            <span class="user-avatar" aria-hidden="true">
+              {{ initials(user?.name || user?.email || '?') }}
+            </span>
+            <span class="user-name">{{ user?.name || user?.email }}</span>
+            <span v-if="isAdmin" class="role-badge">Administrador</span>
           </span>
           <button type="button" class="btn btn-ghost btn-sm" @click="cerrarSesion">Salir</button>
         </template>

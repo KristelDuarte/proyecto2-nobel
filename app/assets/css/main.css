@@ -287,8 +287,15 @@ img {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
   gap: 34px;
+}
+
+@media (max-width: 860px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+  }
 }
 
 .footer-grid h4 {
@@ -1051,13 +1058,37 @@ img {
    ========================================================================== */
 
 /* ---- Navegación con sesión ---- */
-.header-inner { display: flex; align-items: center; gap: 20px; }
-.nav-auth { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.header-inner { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.main-nav { flex: 0 1 auto; justify-content: center; }
+.nav-auth { margin-left: auto; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .user-chip {
-  display: inline-flex; align-items: center; gap: 6px;
+  display: inline-flex; align-items: center; gap: 7px;
   font-size: 0.82rem; color: var(--navy); font-weight: 600;
-  background: rgba(11, 37, 69, 0.06); border-radius: 999px; padding: 5px 12px;
+  background: rgba(11, 37, 69, 0.06); border-radius: 999px; padding: 4px 12px 4px 4px;
 }
+.user-avatar {
+  width: 26px; height: 26px; border-radius: 50%; flex: none;
+  display: grid; place-items: center;
+  background: var(--navy-2); color: #fff;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.02em;
+}
+.user-name {
+  max-width: 170px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* En pantallas donde la barra va justa se muestra solo el avatar y el rol;
+   el nombre completo queda en el tooltip. */
+@media (max-width: 1400px) {
+  .user-name { display: none; }
+}
+
+/* En pantallas medianas la navegación pasa a una fila propia para no solaparse
+   con el bloque de sesión. */
+@media (max-width: 1180px) {
+  .nav-auth { margin-left: auto; }
+  .main-nav { order: 3; flex-basis: 100%; justify-content: flex-start; }
+}
+
 .role-badge {
   font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em;
   background: var(--gold); color: #fff; border-radius: 999px; padding: 2px 7px;
@@ -1166,11 +1197,6 @@ img {
 .auth-title { font-size: 2rem; margin-bottom: 0.25em; }
 .auth-card .lead { font-size: 0.95rem; }
 .auth-alt { margin-top: 18px; font-size: 0.88rem; color: var(--muted); }
-.auth-hint {
-  margin-top: 16px; font-size: 0.82rem; color: var(--muted);
-  border-top: 1px dashed var(--line); padding-top: 12px;
-}
-.auth-hint summary { cursor: pointer; font-weight: 600; color: var(--navy-3); }
 
 /* ---- Ficha: retrato y bandera ---- */
 .detail-flex { display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; }
@@ -1201,16 +1227,3 @@ img {
 
 /* ---- Años ---- */
 .decade-list { display: grid; gap: 22px; }
-
-/* ---- Endpoints ---- */
-.endpoint-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
-.endpoint-list li { font-size: 0.88rem; color: var(--muted); }
-.endpoint-list code {
-  display: inline-block; min-width: 62px; text-align: center;
-  background: var(--navy-2); color: #fff; border-radius: 5px;
-  padding: 1px 8px; font-size: 0.72rem; font-weight: 700; margin-right: 4px;
-}
-.endpoint-list span {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.82rem; color: var(--navy);
-}

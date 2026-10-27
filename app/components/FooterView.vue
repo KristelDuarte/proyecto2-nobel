@@ -20,8 +20,8 @@ onMounted(async () => {
         <div>
           <h4>Premios Nobel</h4>
           <p class="mb-0" style="max-width: 42ch">
-            Catálogo temático con más de mil premios Nobel concedidos desde 1901.
-            Los datos se consultan en tiempo real a una API REST sobre MongoDB.
+            Un recorrido por más de un siglo de premios Nobel: quiénes los recibieron,
+            en qué disciplinas y de dónde vinieron.
           </p>
         </div>
         <div>
@@ -43,11 +43,11 @@ onMounted(async () => {
           </ul>
         </div>
         <div>
-          <h4>Servicio</h4>
+          <h4>Tu cuenta</h4>
           <ul>
-            <li><NuxtLink to="/admin">Panel de administración</NuxtLink></li>
             <li><NuxtLink to="/login">Iniciar sesión</NuxtLink></li>
-            <li><NuxtLink to="/register">Crear cuenta</NuxtLink></li>
+            <li><NuxtLink to="/register">Crear una cuenta</NuxtLink></li>
+            <li><NuxtLink to="/admin">Gestionar el catálogo</NuxtLink></li>
           </ul>
         </div>
       </div>
@@ -62,7 +62,7 @@ onMounted(async () => {
             >CC BY 4.0</a
           >.
         </span>
-        <span>Proyecto 2 · Kristel Duarte Pérez · Arquitectura de Información · © {{ year }}</span>
+        <span>© {{ year }} Catálogo de los Premios Nobel</span>
       </div>
     </div>
   </footer>
