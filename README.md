@@ -3,8 +3,9 @@
 **Estudiante:** Kristel Duarte Pérez
 **Carné:** 119010766
 **Curso:** Arquitectura de Información
-**Sitio publicado:** _pendiente de despliegue_
-**Repositorio:** _pendiente_
+**Sitio publicado:** <https://proyecto2-nobel.netlify.app>
+**Panel de administración:** <https://proyecto2-nobel.netlify.app/admin>
+**Repositorio:** <https://github.com/KristelDuarte/proyecto2-nobel>
 
 Aplicación web con un **servicio REST propio** para consultar y administrar un
 catálogo temático de los Premios Nobel. El servicio corre como **Netlify

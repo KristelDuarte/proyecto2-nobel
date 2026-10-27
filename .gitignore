@@ -20,3 +20,6 @@ Material_ARQUI_Completo.md
 .DS_Store
 Thumbs.db
 *.log
+
+# Local Netlify folder
+.netlify
