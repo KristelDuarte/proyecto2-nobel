@@ -281,7 +281,9 @@ img {
 .site-footer {
   background: var(--navy);
   color: #c8d3e4;
-  padding: 44px 0 30px;
+  /* Espacio inferior extra para que el distintivo flotante de Netlify no tape
+     el texto de la nota final. */
+  padding: 44px 0 62px;
   font-size: 0.92rem;
 }
 

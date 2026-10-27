@@ -62,7 +62,7 @@ onMounted(async () => {
             >CC BY 4.0</a
           >.
         </span>
-        <span>© {{ year }} Catálogo de los Premios Nobel</span>
+        <span>Proyecto 2 · Kristel Duarte Pérez · Arquitectura de Información · © {{ year }}</span>
       </div>
     </div>
   </footer>
