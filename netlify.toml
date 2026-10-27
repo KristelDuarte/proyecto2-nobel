@@ -1,0 +1,80 @@
+# =============================================================================
+# Proyecto 2 — Catálogo temático de Premios Nobel
+# Frontend estático (Nuxt/Vue) + API REST en Netlify Functions + MongoDB Atlas
+# =============================================================================
+
+[build]
+  command = "npm run generate"
+  publish = ".output/public"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# --- Autenticación -----------------------------------------------------------
+[[redirects]]
+  from = "/api/auth/*"
+  to = "/.netlify/functions/auth/:splat"
+  status = 200
+  force = true
+
+# --- Entidad principal: galardonados ----------------------------------------
+[[redirects]]
+  from = "/api/laureates"
+  to = "/.netlify/functions/laureates"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/laureates/*"
+  to = "/.netlify/functions/laureates/:splat"
+  status = 200
+  force = true
+
+# --- Entidad secundaria: categorías ----------------------------------------
+[[redirects]]
+  from = "/api/categories"
+  to = "/.netlify/functions/categories"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/categories/*"
+  to = "/.netlify/functions/categories/:splat"
+  status = 200
+  force = true
+
+# --- Entidad secundaria: países --------------------------------------------
+[[redirects]]
+  from = "/api/countries"
+  to = "/.netlify/functions/countries"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/countries/*"
+  to = "/.netlify/functions/countries/:splat"
+  status = 200
+  force = true
+
+# --- Estadísticas agregadas y retratos SVG ---------------------------------
+[[redirects]]
+  from = "/api/stats"
+  to = "/.netlify/functions/stats"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/images/*"
+  to = "/.netlify/functions/images/:splat"
+  status = 200
+  force = true
+
+# --- Fallback SPA (siempre al final) ---------------------------------------
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

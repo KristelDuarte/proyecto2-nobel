@@ -1,0 +1,22 @@
+# dependencias
+node_modules/
+
+# build
+.nuxt/
+.output/
+dist/
+.data/
+
+# entorno (credenciales de MongoDB y secreto JWT)
+.env
+.env.*
+!.env.example
+
+# entregables y material del curso
+*.zip
+Material_ARQUI_Completo.md
+
+# sistema
+.DS_Store
+Thumbs.db
+*.log

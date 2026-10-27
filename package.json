@@ -1,0 +1,28 @@
+{
+  "name": "catalogo-nobel-crud",
+  "private": true,
+  "type": "module",
+  "description": "Proyecto 2 — Catálogo temático de Premios Nobel con MongoDB, Netlify Functions y autenticación JWT.",
+  "scripts": {
+    "dev": "nuxt dev",
+    "dev:api": "node scripts/dev-api.mjs",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "seed": "node scripts/seed.mjs",
+    "data": "node scripts/build-dataset.mjs",
+    "postinstall": "nuxt prepare"
+  },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "dependencies": {
+    "mongodb": "^6.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "dotenv": "^16.4.7",
+    "nuxt": "^4.0.0",
+    "typescript": "^5.6.0"
+  }
+}
