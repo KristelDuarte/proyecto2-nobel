@@ -10,6 +10,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "seed": "node scripts/seed.mjs",
+    "db:check": "node scripts/check-connection.mjs",
     "data": "node scripts/build-dataset.mjs",
     "postinstall": "nuxt prepare"
   },
