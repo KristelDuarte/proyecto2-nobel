@@ -23,3 +23,6 @@ Thumbs.db
 
 # Local Netlify folder
 .netlify
+
+# estado local de la CLI de Netlify
+.netlify/
